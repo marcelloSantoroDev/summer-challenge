@@ -59,14 +59,15 @@ function App() {
     <div>
       { loading && <h1>Carregando...</h1> }
       { data.map((element) => (
-        <img key={element.id} src={element.url} alt={`meme ${element.id}`}  />
+        <div>
+        <img key={element.id} src={element.url} alt={`meme ${element.id}`} width='500px'  />
+        </div>
       )) }
     </div>
   );
 }
 
 export default App;
-
 ```
 
 #### No código acima, nós estamos criando dois hooks nativos com o `useState` para armazenar os dados retornados da API e para "setar" o carregamento da página enquanto essa requisição não é finalizada. Logo abaixo, dentro de um `useEffect` nós estamos fazendo a  requisição para uma API de memes e armazenando seus dados em `data`, bem como mudando o `loading` para falso. No retorno da função, estamos renderizando o texto "Carregando..." enquanto `loading` continua sendo true e, abaixo, fazendo um `map` nos itens retornados.
@@ -91,7 +92,7 @@ export default function useFetch(url) {
     setLoading(false)
   }, [url]);
 
-  return [data, loading];
+  return { data, loading };
 }
 
 ```
@@ -102,17 +103,21 @@ export default function useFetch(url) {
 
 ```JS
 import React from 'react';
-import useFetch from './hooks/useTheme';
+import useFetch from './hooks/useFetch';
 
 function App() {
-const [data, loading] = useFetch('https://api.imgflip.com/get_memes');
+const { data, loading } = useFetch('https://api.imgflip.com/get_memes');
 
   return (
     <div>
       { loading && <h1>Carregando...</h1> }
+      <div>
       { data?.data.memes.map((element) => (
-        <img key={element.id} src={element.url} alt={`meme ${element.id}`}  />
+        <div>
+        <img key={element.id} src={element.url} alt={`meme ${element.id}`} width='500px' />
+        </div>
       )) }
+      </div>
     </div>
   );
 }
@@ -455,7 +460,24 @@ export default App;
 
 ##### Teste se funcionou, caso tenha dificuldade, olhe a resolução no *gabarito*.
 
+## Exercício bônus
 
+#### Se você está com tempo, que tal tentar mais uma coisinha? Volte no primeiro código que vimos na aula, aquele da requisição à API  de memes, e tente adicionar um botão que salva a `url` dos memes que o usuário curtir:
+
+- Crie um arquivo na pasta `hooks` chamado `useLocalStorage` e escreva a estrutura básica da sua função;
+- Crie a lógica que vai verificar se já existe algo em uma chave específica e, se não existir, crie um valor padrão para iniciar essa chave no localStorage (tudo isso deve ser dinâmico);
+- Armazene o valor em uma variável;
+- Use essa variável dentro de um `useEffect` para iniciar a aplicação com o valor que está dentro do `localStorage`
+- Retorne a variável que está armazenando o valor, bem como a função que o altera
+##### No componente:
+- Importe o seu hook customizado;
+- Desestruture o que foi retornado dele e crie uma chave para o localStorage, bem como um valor inicial;
+- Crie uma função que ira incrementar os valores salvos no localStorage;
+- Crie um botão com o texto `Curtir`;
+- Adicione essa função no escutador de eventos `onClick` do botão, passando a url como parâmetro;
+*Dica: a função precisa ser executada com uma callBack*
+
+#### A resolução está no *gabarito*.
 
 ![](https://media.giphy.com/media/JRU72sMVc3nLjrFA9I/giphy.gif)
 

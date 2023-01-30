@@ -292,3 +292,89 @@ export default App;
 ```
 - Importe a função `useToggleTheme` no topo do seu componente;
 - Desestruture a variável `theme` e a função `toggleTheme`, retornados pelo seu hook customizado.
+
+
+
+
+
+## Exercício bônus
+
+#### Se você está com tempo, que tal tentar mais uma coisinha? Volte no primeiro código que vimos na aula, aquele da requisição à API  de memes, e tente adicionar um botão que salva a `url` dos memes que o usuário curtir:
+
+- Crie um arquivo na pasta `hooks` chamado `useLocalStorage` e escreva a estrutura básica da sua função;
+- Crie a lógica que vai verificar se já existe algo em uma chave específica e, se não existir, crie um valor padrão para iniciar essa chave no localStorage (tudo isso deve ser dinâmico e informado no `input` da função);
+- Armazene o valor em uma variável;
+- Crie o hook `useState` para guardar o valor;
+- Use a variável desse hook dentro de um `useEffect` para "setar" o localStorage com o seu valor à renderização do componente;
+- Retorne a variável que está armazenando o valor, bem como a função que o altera.
+##### No componente:
+- Importe o seu hook customizado;
+- Desestruture o que foi retornado dele e crie uma chave para o localStorage, bem como um valor inicial;
+- Crie uma função que ira incrementar os valores salvos no localStorage;
+- Crie um botão com o texto `Curtir`;
+- Adicione essa função no escutador de eventos `onClick` do botão, passando a url como parâmetro.
+*Dica: a função precisa ser executada com uma callBack*
+
+## Resolução:
+
+- Arquivo do Hook Customizado:
+```JS
+import { useState, useEffect } from 'react';
+
+const useLocalStorage = (key, initialValue) => {
+  const item = localStorage.getItem(key);
+  const storedValue = item ? JSON.parse(item) : initialValue;
+  const [value, setValue] = useState(storedValue);
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+};
+
+export default useLocalStorage;
+
+```
+
+
+- Arquivo do componente:
+```JS
+import React from 'react';
+import useFetch from './hooks/useFetch';
+import useLocalStorage from './hooks/useLocalStorage';
+
+function App() {
+  const [value, setValue] = useLocalStorage('likedMemes', []);
+  const { data, loading } = useFetch('https://api.imgflip.com/get_memes');
+
+  const handleLike = (url) => {
+    setValue([...value, url]);
+  };
+
+  return (
+    <div>
+      {loading && <h1>Carregando...</h1>}
+      <div>
+        {data?.data.memes.map((element) => (
+          <div>
+            <img key={element.id} src={element.url} alt={`meme ${element.id}`} width="500px" />
+            <div>
+              <button
+                style={{ width: '100px' }}
+                value={element.url}
+                onClick={() => handleLike(element.url)}
+              >
+                Curtir
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+```
