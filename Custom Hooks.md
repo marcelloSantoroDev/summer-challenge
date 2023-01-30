@@ -3,7 +3,7 @@
 
 
 
-#### Depois de descobrir as maravilhas dos hooks nativos do React, como o ==useState== e o ==useEffect==, você deve estar pensando que não pode ficar melhor, não é? Mas fica.
+#### Depois de descobrir as maravilhas dos hooks nativos do React, como o *useState* e o *useEffect*, você deve estar pensando que não pode ficar melhor, não é? Mas fica.
 
 #### Os Custom Hooks, ou Hooks Customizados, vieram para trazer ainda mais dinamismo para suas aplicações, diminuindo a redundância e a complexidade em seus códigos. Bora lá conhecer esse novo amigo fiel.
 
@@ -69,13 +69,13 @@ export default App;
 
 ```
 
-#### No código acima, nós estamos criando dois hooks nativos com o ==useState== para armazenar os dados retornados da API e para "setar" o carregamento da página enquanto essa requisição não é finalizada. Logo abaixo, dentro de um ==useEffect== nós estamos fazendo a  requisição para uma API de memes e armazenando seus dados em ==data==, bem como mudando o ==loading== para falso. No retorno da função, estamos renderizando o texto "Carregando..." enquanto ==loading== continua sendo true e, abaixo, fazendo um ==map== nos itens retornados.
+#### No código acima, nós estamos criando dois hooks nativos com o `useState` para armazenar os dados retornados da API e para "setar" o carregamento da página enquanto essa requisição não é finalizada. Logo abaixo, dentro de um `useEffect` nós estamos fazendo a  requisição para uma API de memes e armazenando seus dados em `data`, bem como mudando o `loading` para falso. No retorno da função, estamos renderizando o texto "Carregando..." enquanto `loading` continua sendo true e, abaixo, fazendo um `map` nos itens retornados.
 
- - *==Um lembrete! O hook nativo useEffect, com seu array de dependências vazio, funciona parecido com o componentDidMount em componentes de classe*
+ - `Um lembrete! O hook nativo useEffect, com seu array de dependências vazio, funciona parecido com o componentDidMount em componentes de classe
 
 ### Essa maneira já é bem menos complexa do que no uso dos estados em componentes de classe, mas dá para ficar muito melhor. No exemplo acima, toda a nossa lógica está na raiz da função do componente e não poderá ser reutilizada em lugar nenhum, além de prejudicar a limpeza das funções principais. Esse componente pode ficar limpinho, limpinho.
 
-### Com o uso de Hooks Customizados, nós podemos deixar essa lógica reutilizável e movê-la para outro lugar. Podemos, por exemplo, criar um diretório chamado *hooks* e, dentro dele, criar um arquivo chamado ==useFetch.js==. O código ficaria assim:
+### Com o uso de Hooks Customizados, nós podemos deixar essa lógica reutilizável e movê-la para outro lugar. Podemos, por exemplo, criar um diretório chamado *hooks* e, dentro dele, criar um arquivo chamado `useFetch.js`. O código ficaria assim:
 
 ```JS
 import { useState, useEffect } from 'react';
@@ -120,8 +120,8 @@ const [data, loading] = useFetch('https://api.imgflip.com/get_memes');
 export default App;
 
 ```
-- ==Note1: o ponto de interrogação após **data** faz com  que o **map** apenas aconteça se ele não for **null**, nem **undefined**
-- ==Note2: perceba que, em nosso componente, não precisamos mais usar **useEffect**, ou **useState**. O seu hook customizado está fazendo todo o trabalho por baixo dos panos.
+- Note1: o ponto de interrogação após **data** faz com  que o **map** apenas aconteça se ele não for **null**, nem **undefined**`
+- Note2: perceba que, em nosso componente, não precisamos mais usar **useEffect**, ou **useState**. O seu hook customizado está fazendo todo o trabalho por baixo dos panos.
 
 #### Pronto! Agora, o seu componente está limpo, pouco complexo e você ainda tem uma função de requisições para usar outras vezes.
 
@@ -152,7 +152,7 @@ export default App;
 
 #### Com essas duas regrinhas em mente, vamos começar a criar a nosso primeiro Hook Customizado! 
 
-##### ==Mas antes==, vá até o seu repositório de exercícios da trybe e, na respectiva seção, crie uma pasta para o dia de hoje. Dentro dela, você irá rodar o seguinte comando:
+##### *Mas antes*, vá até o seu repositório de exercícios da trybe e, na respectiva seção, crie uma pasta para o dia de hoje. Dentro dela, você irá rodar o seguinte comando:
 
 ```BASH
 npx create-react-app custom-hooks
@@ -227,7 +227,11 @@ function App() {
 export default App;
 ```
 
-### Esse é o mais que simples, mais que praticado, ==*handleChange*== de um formulário. Estamos criando um hook com o ==useState== e criando chaves para armazenar os dados que o usuário irá digitar nos *inputs*. Depois, criamos a nossa função ==handleChange==, que vai ser utilizada no escutador de eventos ==onChange==. <span style="color:green">Perceba que, no caso de componentes funcionais, é necessário fazer um "spread" do objeto antes de mudar as suas chaves dinamicamente, caso contrário, a sua função vai sobrescrever o que já foi armazenado</span>.  Da maneira feita acima, a lógica só pode ser utilizada uma única vez. Será que podemos pensar em fazer, dessa lógica, algo mais dinâmico?
+### Esse é o mais que simples, mais que praticado, `handleChange` de um formulário. Estamos criando um hook com o `useState` e criando chaves para armazenar os dados que o usuário irá digitar nos *inputs*. Depois, criamos a nossa função `handleChange`, que vai ser utilizada no escutador de eventos `onChange`.
+
+#### *Perceba que, no caso de componentes funcionais, é necessário fazer um "spread" do objeto antes de mudar as suas chaves dinamicamente, caso contrário, a sua função vai sobrescrever o que já foi armazenado*. 
+
+#### Da maneira feita acima, a lógica só pode ser utilizada uma única vez. Será que podemos pensar em fazer, dessa lógica, algo mais dinâmico?
 
 
 ![](https://media.giphy.com/media/nlSrYLgtOC0b2qxPfn/giphy.gif)
@@ -237,8 +241,8 @@ export default App;
 
 
 #### Vamos ver o mesmo código, mas utilizando uma Hook Customizada:
-- Na pasta src, crie um diretório chamado ==**hooks**==
-- Dentro dele, crie um arquivo chamado ==**useFormValidation**== e cole o seguinte código dentro dele:
+- Na pasta src, crie um diretório chamado `hooks`
+- Dentro dele, crie um arquivo chamado `useFormValidation` e cole o seguinte código dentro dele:
 
 ```JS
 import { useState } from 'react';
@@ -373,10 +377,10 @@ export function App() {
 
 ![](https://media.giphy.com/media/3o6Ztn7QsncvRY58ty/giphy.gif)
 
-#### Pense em como criar um Hook Customizado para esse caso - o de um contador. Ah, e faça com que o contador do ==*code review*== começe a partir do número 10.
+#### Pense em como criar um Hook Customizado para esse caso - o de um contador. Ah, e faça com que o contador do *code review* começe a partir do número 10.
 
 ## Atenção! Para esse exercício no *React Playground*, não crie diretórios, crie apenas os arquivos necessários direto na pasta src.
-- sem estresse, viu? Qualquer coisa é só dar uma olhada no <span style="color:green">gabarito</span> :))
+- sem estresse, viu? Qualquer coisa é só dar uma olhada *gabarito* :)) 
 
 
 
@@ -402,21 +406,18 @@ export function App() {
 
 ### Para este exercício, vamos implementar um *ToggleTheme*. Nesse caso, é apenas um botão que muda de cor ao evento de clique.
 
-### Na mesma aplicação React que você criou mais cedo, a *custom-hooks*, você terá que implementar a lógica <span style="color:red">sem</span> custom hooks e, após isso, refatorar o código para usar a lógica <span style="color:green">com</span> custom hook.
+### Na mesma aplicação React que você criou mais cedo, a *custom-hooks*, você terá que implementar a lógica *sem* custom hooks e, após isso, refatorar o código para usar a lógica *com* custom hook.
 
 # Instruções
 
+## Sem Custom Hook:
 
-# Gabarito 
-
-###### sem hooks
+- Cole o seguinte código em seu arquivo:
 ```JS
 
 import React, { useState } from 'react';
 
-function App() {
-
-  const themes = {
+const themes = {
   light: {
     background: "#eeeeee",
     text: "#000000"
@@ -427,72 +428,32 @@ function App() {
   }
 };
 
-  const [theme, setTheme] = useState('light');
-
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
-  return (
-  <button
-  onClick={toggleTheme}
-  style={{ background: themes[theme].background, color: themes[theme].text, padding: '100px', fontSize: '200px' }}
-  >Toggle Theme
-  </button>
-  );
-}
-
-export default App;
-```
-
-###### com hooks
-- custom file
-```JS
-import { useState } from 'react';
-
-  const themes = {
-  light: {
-    text: "#000000",
-    background: "#eeeeee"
-  },
-  dark: {
-    text: "#ffffff",
-    background: "#222222"
-  }
-};
-
-export default function useToggleTheme() {
-  const [theme, setTheme] = useState(themes.light);
-
-  const toggleTheme = () => {
-    setTheme(theme === themes.light ? themes.dark : themes.light);
-  };
-
-  return [theme, toggleTheme];
-}
-```
-
-- component file
-
-```JS
-import React from 'react';
-import useToggleTheme from './hooks/useTheme';
-
 function App() {
-
-  const [theme, toggleTheme] = useToggleTheme();
-
   return (
-  <button
-  onClick={toggleTheme}
-  style={{ background: theme.background, color: theme.text, padding: '100px', fontSize: '200px' }}
-  >Toggle Theme
-  </button>
+  <button>Toggle Theme</button>
   );
 }
 
 export default App;
 ```
+
+#### Use a constante `themes` para criar a lógica do seu toggle:
+- Crie um hook com o `useState` para armazenar o valor alterável do seu tema de cor;
+- Crie uma função `toggleTheme` para alterar o valor das cores de um para o outro;
+- Por fim, implemente a lógica do seu `toggle` dentro do botão;
+- Coloque, no `style` do botão, os valores de `cor de fundo (background)` e `cor de texto (text)` para habilitar o toggle, nem como `padding='100px'` e `fontSize='200px'` ;
+*Dica: pesquise no google: como fazer estilizações 'inline'*.
+
+
+## Com Custom Hook:
+
+- Agora, pegue o código que você criou e tente refatorá-lo para utilizar um Hook Customizado;
+- Na pasta `hooks`, crie o arquivo que armazenará o seu Custom Hook;
+- Transfira a lógica do seu `toggle` para esse arquivo, criando uma função que fará o trabalho "por baixo dos panos";
+*Dica: sua constante `themes` deverá ficar no escopo global do arquivo*
+- No componente, importe a função e modifique o código para adaptá-lo ao seu Custom Hook;
+
+##### Teste se funcionou, caso tenha dificuldade, olhe a resolução no *gabarito*.
 
 
 

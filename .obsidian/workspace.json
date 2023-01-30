@@ -25,13 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Gabarito.md",
+                "file": "Custom Hooks.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -158,7 +159,7 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "c92944419f6e7f69",
+  "active": "7917bb7c2b5f647d",
   "lastOpenFiles": [
     "Gabarito.md",
     "Custom Hooks.md"
