@@ -1,4 +1,6 @@
 
+# ADICIONAR ISTO: -   **Great Community** — there is a good chance somebody already created the hook you're thinking of. The web is filled with a ton of Custom Hooks! you can find a hook for your need and use it as-is or even better — you can use it as a starting point and make it awesome!
+
 # Custom Hooks
 
 
