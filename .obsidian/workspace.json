@@ -11,24 +11,16 @@
             "id": "7917bb7c2b5f647d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Custom_Hooks.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           },
           {
             "id": "d105774f432066d0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Gabarito.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ],
@@ -98,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Gabarito.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Gabarito.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +127,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Gabarito.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -161,7 +149,7 @@
   },
   "active": "d105774f432066d0",
   "lastOpenFiles": [
-    "Custom_Hooks.md",
-    "Gabarito.md"
+    "Gabarito.md",
+    "Custom_Hooks.md"
   ]
 }
