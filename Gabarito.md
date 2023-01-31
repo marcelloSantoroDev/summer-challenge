@@ -219,7 +219,8 @@ function App() {
   <button
   onClick={toggleTheme}
   style={{ background: theme.background, color: theme.text, padding: '100px', fontSize: '200px' }}
-  >Toggle Theme
+  >
+  Mudar tema
   </button>
   );
 }
@@ -282,7 +283,8 @@ function App() {
   <button
   onClick={toggleTheme}
   style={{ background: theme.background, color: theme.text, padding: '100px', fontSize: '200px' }}
-  >Toggle Theme
+  >
+  Mudar tema
   </button>
   );
 }
