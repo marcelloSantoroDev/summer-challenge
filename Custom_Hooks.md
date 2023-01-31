@@ -144,7 +144,7 @@ export default App;
 ![](https://giphy.com/embed/SACoDGYTvVNhZYNb5a)
 ![mindblown](https://media.giphy.com/media/SACoDGYTvVNhZYNb5a/giphy.gif)
 
-#### Muito legal, né? Então, partiu aprender a criar os nossos próprios Hooks Customizados? Partiu!
+#### Muito legal, né? Então, partiu aprender a criar os nossos próprios Custom Hooks? Partiu!
 
 
 
@@ -162,13 +162,13 @@ export default App;
 #### Primeira Regra:
 - ##### Assim como utilizamos as extensões para identidicar arquivos `(ex: .js)`, ou as letras maiúsculas para identificar componentes React `(ex: App.js)`, nós devemos utilizar a palavra USE para indicar à nossa aplicação que o que estamos prestes a criar é, de fato, um Hook Customizado.
 #### Segunda Regra:
-- ##### Apenas é considerado Hook Customizado quando ele utiliza, em seu escopo, `hooks nativos` do React. Caso contrário, ele é apenas uma função genérica mesmo.
+- ##### Apenas é considerado Custom Hook quando ele utiliza, em seu escopo, `hooks nativos` do React. Caso contrário, ele é apenas uma função genérica mesmo.
 
 # *Show me the code!!!*
 
 ![show me the code](https://media.giphy.com/media/scZPhLqaVOM1qG4lT9/giphy.gif)
 
-### Com essas duas regrinhas em mente, vamos começar a criar a nosso primeiro Hook Customizado! 
+### Com essas duas regrinhas em mente, vamos começar a criar a nosso primeiro Custom Hook! 
 
 #### *Mas antes*, vá até o seu repositório de exercícios da trybe e, na respectiva seção, crie uma pasta para o dia de hoje.
 
@@ -250,7 +250,7 @@ export default App;
 
 *Perceba que, no caso de componentes funcionais, é necessário fazer um "spread" do objeto antes de mudar as suas chaves dinamicamente, caso contrário, a sua função vai sobrescrever o que já foi armazenado*. 
 
-#### Da maneira feita acima, a lógica só pode ser utilizada uma única vez. Será que podemos melhorar isso com um hook customizado?
+#### Da maneira feita acima, a lógica só pode ser utilizada uma única vez. Será que podemos melhorar isso com um Custom Hook?
 
 
 ![](https://media.giphy.com/media/nlSrYLgtOC0b2qxPfn/giphy.gif)
@@ -259,7 +259,7 @@ export default App;
 
 
 
-#### Vamos ver o mesmo código, mas utilizando uma Hook Customizada:
+#### Vamos ver o mesmo código, mas utilizando um Hook Customizado:
 - Na pasta src, crie outra pasta chamada `hooks`
 - Dentro dela, crie um arquivo chamado `useFormValidation.js` e cole o seguinte código:
 
@@ -432,7 +432,7 @@ export function App() {
 
 ### Para este exercício, vamos implementar um *ToggleTheme*. Nesse caso, é apenas um botão que muda de cor ao evento de clique.
 
-### Na mesma aplicação React que você criou mais cedo, a *custom-hooks*, você terá que implementar a lógica *sem* custom hooks e, após isso, refatorar o código para usar a lógica *com* custom hook.
+### Na mesma aplicação React que você criou mais cedo, a *custom-hooks*, você terá que implementar a lógica *sem* Custom Hooks e, após isso, refatorar o código para usar a lógica *com* Custom Hook.
 
 # Instruções
 

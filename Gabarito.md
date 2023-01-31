@@ -190,8 +190,7 @@ export default App;
 
 # Resolução
 
-###### Sem Hook Customizado:
-
+###### Sem Custom Hook:
 ```JS
 
 
@@ -237,9 +236,9 @@ export default App;
  - Faça a mesma coisa para a cor do texto: `theme.text`
 
 
-###### Com Hook Customizado:
+###### Com Custom Hook:
 
-- Arquivo do Hook Customizado:
+- Arquivo do Custom Hook:
 ```JS
 import { useState } from 'react';
 
@@ -317,7 +316,7 @@ export default App;
 
 ## Resolução:
 
-- Arquivo do Hook Customizado:
+- Arquivo do Custom Hook:
 ```JS
 import { useState, useEffect } from 'react';
 

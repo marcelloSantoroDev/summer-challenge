@@ -31,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Custom_Hooks.md",
+                "file": "Gabarito.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Custom_Hooks.md",
+                "file": "Gabarito.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Custom_Hooks.md"
+                "file": "Gabarito.md"
               }
             }
           }
@@ -158,9 +159,9 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "7917bb7c2b5f647d",
+  "active": "d105774f432066d0",
   "lastOpenFiles": [
-    "Gabarito.md",
-    "Custom_Hooks.md"
+    "Custom_Hooks.md",
+    "Gabarito.md"
   ]
 }
