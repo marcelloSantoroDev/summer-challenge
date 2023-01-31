@@ -17,7 +17,7 @@
 
 #### Por que isso é importante?
 - ##### Uma das coisas essenciais para ser um bom profissional de desenvolvimento web é a capacidade de fazer do seu código o mais dinâmico, mais limpo e reutilizável possível. Os Hooks Customizados nos ajudam nessa ~~obrigação~~ tarefa.
-- ##### Além disso, o uso de Hooks customizados fortalece o senso de comunidade que devemos ter em nossas trajetórias no desenvolvimento web. Isso, porque há muitos hooks customizados já criados por outras pessoas e que você pode utilizar, assim como você poderá criar mais outros e disponibilizá-los para seus pares!
+- ##### Além disso, o uso de Hooks Customizados fortalece o senso de comunidade que devemos ter em nossas trajetórias no desenvolvimento web. Isso, porque há muitos Hooks Customizados já criados por outras pessoas e que você pode utilizar, assim como você poderá criar mais outros e disponibilizá-los para seus pares!
 
 ### Vamos juntes nessa viagem!!
 
@@ -144,7 +144,7 @@ export default App;
 ![](https://giphy.com/embed/SACoDGYTvVNhZYNb5a)
 ![mindblown](https://media.giphy.com/media/SACoDGYTvVNhZYNb5a/giphy.gif)
 
-#### Muito legal, né? Então, partiu aprender a criar as nossas próprias Custom Hooks? Partiu!
+#### Muito legal, né? Então, partiu aprender a criar os nossos próprios Hooks Customizados? Partiu!
 
 
 
@@ -155,7 +155,7 @@ export default App;
 
 
 
-### A primeira lição do dia é: as duas regras de ouro dos Hooks Customizados.
+### A primeira lição do dia é: as duas regras de ouro dos Custom Hooks.
 
 *Anota aí!* :pencil2: 
 
@@ -515,5 +515,5 @@ export default App;
 
 
 
-- [Sobre hooks customizados no site do React](https://reactjs.org/docs/hooks-custom.html)
+- [Sobre Custom Hooks no site do React](https://reactjs.org/docs/hooks-custom.html)
 - [React Custom Hook tutorial with example](https://www.bezkoder.com/react-custom-hook/)
