@@ -1,23 +1,23 @@
 
-# ADICIONAR ISTO: -   **Great Community** — there is a good chance somebody already created the hook you're thinking of. The web is filled with a ton of Custom Hooks! you can find a hook for your need and use it as-is or even better — you can use it as a starting point and make it awesome!
 
 # Custom Hooks
 
 
 
-#### Depois de descobrir as maravilhas dos hooks nativos do React, como o *useState* e o *useEffect*, você deve estar pensando que não pode ficar melhor, não é? Mas fica.
+### Depois de descobrir as maravilhas dos hooks nativos do React, como o *useState* e o *useEffect*, você deve estar pensando que não pode ficar melhor, não é? Mas fica.
 
-#### Os Custom Hooks, ou Hooks Customizados, vieram para trazer ainda mais dinamismo para suas aplicações, diminuindo a redundância e a complexidade em seus códigos. Bora lá conhecer esse novo amigo fiel.
+### Os `Custom Hooks`, ou `Hooks Customizados`, vieram para trazer ainda mais dinamismo para suas aplicações, diminuindo a redundância e a complexidade em seus códigos. Bora lá conhecer esse novo amigo fiel.
 
-### O que vamos aprender?
+#### O que vamos aprender?
 - ##### O que são Hooks Customizadas, entender porquê elas são tão boas para o desenvolvedor front-end e, finalmente, criar as nossas próprias Hooks Customizadas!
 
-### Você será capaz de:
+#### Você será capaz de:
 - ##### Identificar redundância e complexidade no seu código com mais eficiência;
 - ##### Criar Custom Hooks para diferentes ocasiões.
 
-### Por que isso é importante?
+#### Por que isso é importante?
 - ##### Uma das coisas essenciais para ser um bom profissional de desenvolvimento web é a capacidade de fazer do seu código o mais dinâmico, mais limpo e reutilizável possível. Os Hooks Customizados nos ajudam nessa ~~obrigação~~ tarefa.
+- ##### Além disso, o uso de Hooks customizados fortalece o senso de comunidade que devemos ter em nossas trajetórias no desenvolvimento web. Isso, porque há muitos hooks customizados já criados por outras pessoas e que você pode utilizar, assim como você poderá criar mais outros e disponibilizá-los para seus pares!
 
 ### Vamos juntes nessa viagem!!
 
@@ -34,12 +34,12 @@
 
 #### Nas seções anteriores, você já aprendeu sobre as vantagens de se criar componentes genéricos e reutilizáveis em suas aplicações, como, por exemplo, um componente de botão que você pode utilizar em mais de uma rota, apenas adaptando seus atributos para o contexto desejado.
 
-#### Pois bem, uma Hook Customizada tem exatamente esse benefício. É uma função genérica que substitui hooks individuais e pode ser utilizada em mais de um lugar da sua aplicação. Isso é vantajoso em diversos aspectos - você deixará seus componentes mais limpos e legíveis, diminuir a complexidade do código e, principalmente, economizar tempo e energia para problemas mais difíceis.
-
-###### *Fique de olho! 
-- esse exemplo pode ser bem útil para você ~~em projetos futuros~~ na sua vida de desenvolvedor!
+#### Pois bem, um  Hook Customizado carrega exatamente esse benefício. É uma função genérica que utiliza `hooks nativos` para criar um bloco de código que exerce uma lógica específica, e pode ser utilizada em mais de um lugar da sua aplicação. Isso é vantajoso em diversos aspectos - você deixará seus componentes mais limpos e legíveis, diminuir a complexidade do código e, principalmente, economizar tempo e energia para os problemas mais difíceis.
 
 #### Vamos pensar em uma situação prática: suponhamos que você está trabalhando com mais de uma rota e, em cada uma delas, você precise fazer uma requisição para uma API diferente. Como nós faríamos isso da maneira que já aprendemos?
+
+##### *Fique de olho!* :eyes:
+- ##### esse exemplo pode ser bem útil para você ~~em projetos futuros~~ na sua vida de desenvolvedor!
 
 ```JS
 import React, { useState, useEffect } from 'react';
@@ -72,19 +72,19 @@ function App() {
 export default App;
 ```
 
-#### No código acima, nós estamos criando dois hooks nativos com o `useState` para armazenar os dados retornados da API e para "setar" o carregamento da página enquanto essa requisição não é finalizada. Logo abaixo, dentro de um `useEffect` nós estamos fazendo a  requisição para uma API de memes e armazenando seus dados em `data`, bem como mudando o `loading` para falso. No retorno da função, estamos renderizando o texto "Carregando..." enquanto `loading` continua sendo true e, abaixo, fazendo um `map` nos itens retornados.
+#### No código acima, nós estamos criando dois hooks nativos com o `useState` para armazenar os dados retornados da API e para "setar" o carregamento da página enquanto esta requisição não é finalizada. Logo abaixo, dentro de um `useEffect`, nós estamos fazendo a  requisição para uma API de memes e armazenando seus dados em `data`, bem como mudando o `loading` para falso. No retorno da função, estamos renderizando o texto "Carregando..." enquanto `loading` continua sendo `true` e, abaixo, fazendo um `map` nos itens retornados.
 
- - `Um lembrete! O hook nativo useEffect, com seu array de dependências vazio, funciona parecido com o componentDidMount em componentes de classe
+ - # `Um lembrete! O hook nativo useEffect, com seu array de dependências vazio, funciona de maneira similar ao o componentDidMount em componentes de classe.
 
-### Essa maneira já é bem menos complexa do que no uso dos estados em componentes de classe, mas dá para ficar muito melhor. No exemplo acima, toda a nossa lógica está na raiz da função do componente e não poderá ser reutilizada em lugar nenhum, além de prejudicar a limpeza das funções principais. Esse componente pode ficar limpinho, limpinho.
+#### Essa maneira já é bem menos complexa do que com o uso dos estados em componentes de classe, mas dá para ficar muito melhor. No exemplo acima, toda a nossa lógica está na raiz da função do componente e não poderá ser reutilizada em outro lugar, além de prejudicar a limpeza das funções principais. Esse componente pode ficar limpinho, limpinho.
 
-### Com o uso de Hooks Customizados, nós podemos deixar essa lógica reutilizável e movê-la para outro lugar. Podemos, por exemplo, criar um diretório chamado *hooks* e, dentro dele, criar um arquivo chamado `useFetch.js`. O código ficaria assim:
+#### Com o uso de Hooks Customizados, nós podemos deixar essa lógica reutilizável e movê-la para outro lugar. Podemos, por exemplo, criar uma pasta chamada `hooks` e, dentro dela, um arquivo chamado `useFetch.js`. O código ficaria assim:
 
 ```JS
 import { useState, useEffect } from 'react';
 
 export default function useFetch(url) {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -99,10 +99,13 @@ export default function useFetch(url) {
 
 ```
 
-#### Como você pode ver acima, nós separamos toda a lógica da requisição à API para o novo arquivo. Agora, esse código, além de estar separado da aplicação, pode ser usado para fazer requisições em outras rotas, para outras API's e armazenar seus dados para que possamos manipulá-los. Tudo isso sem precisar escrever mais linhas de código!
+#### Como você pode ver acima, nós separamos toda a lógica da requisição à API para o novo arquivo e retornamos o que vamos usar para colocar a lógica em prática.
+
+#### Agora esse código, por ser dinâmico, além de estar separado da aplicação, pode ser usado para fazer requisições em outras rotas, para outras API's e armazenar seus dados para que possamos manipulá-los. Tudo isso sem precisar escrever mais linhas de código!
 
 ##### Agora, é só importar a função e aplicá-la em seu componente:
 
+- Gaste alguns minutinhos tentando entender este código
 ```JS
 import React from 'react';
 import useFetch from './hooks/useFetch';
@@ -127,10 +130,15 @@ const { data, loading } = useFetch('https://api.imgflip.com/get_memes');
 export default App;
 
 ```
-- Note1: o ponto de interrogação após **data** faz com  que o **map** apenas aconteça se ele não for **null**, nem **undefined**`
-- Note2: perceba que, em nosso componente, não precisamos mais usar **useEffect**, ou **useState**. O seu hook customizado está fazendo todo o trabalho por baixo dos panos.
+- `Note¹`: o ponto de interrogação após **data** faz com que o **map** apenas aconteça se ele não for **null**, nem **undefined**`
+- `Note²`: perceba que, em nosso componente, não precisamos mais usar **useEffect**, nem **useState**. O seu hook customizado está fazendo todo o trabalho por baixo dos panos.
+
+- #### No componente, estamos desestruturando a variável que vai armazenar o retorno da API, bem como a variável que "seta" o loading de `true` para `false`;
+- #### Estamos enviando a `url` da API para o parâmetro do hook customizado para que ele faça o seu trabalho corretamente;
+- #### Agora, é só pegar as variáveis `data` e `loading` e utilizá-las na renderização.
 
 #### Pronto! Agora, o seu componente está limpo, pouco complexo e você ainda tem uma função de requisições para usar outras vezes.
+
 
 ![](https://giphy.com/embed/SACoDGYTvVNhZYNb5a)
 ![mindblown](https://media.giphy.com/media/SACoDGYTvVNhZYNb5a/giphy.gif)
@@ -146,18 +154,18 @@ export default App;
 
 
 
-#### A primeira lição do dia é: as duas regras de ouro dos Hooks Customizados.
+### A primeira lição do dia é: as duas regras de ouro dos Hooks Customizados.
 
 #### Primeira Regra:
-- ##### Assim como utilizamos as extensões para identidicar arquivos (ex: .js), ou as letras maiúsculas para identificar componentes React (ex: App.js), nós devemos utilizar a palavra USE para indicar à nossa aplicação que o que estamos prestes a criar é, de fato, um Hook Customizado.
+- ##### Assim como utilizamos as extensões para identidicar arquivos `(ex: .js)`, ou as letras maiúsculas para identificar componentes React `(ex: App.js)`, nós devemos utilizar a palavra USE para indicar à nossa aplicação que o que estamos prestes a criar é, de fato, um Hook Customizado.
 #### Segunda Regra:
-- ##### Apenas é considerado Hook Customizado quando ele utiliza, em seu escopo, hooks nativos do React. Caso contrário, ele é apenas uma função genérica mesmo.
+- ##### Apenas é considerado Hook Customizado quando ele utiliza, em seu escopo, `hooks nativos` do React. Caso contrário, ele é apenas uma função genérica mesmo.
 
-## *Show me the code!!!*
+# *Show me the code!!!*
 
 ![show me the code](https://media.giphy.com/media/scZPhLqaVOM1qG4lT9/giphy.gif)
 
-#### Com essas duas regrinhas em mente, vamos começar a criar a nosso primeiro Hook Customizado! 
+### Com essas duas regrinhas em mente, vamos começar a criar a nosso primeiro Hook Customizado! 
 
 ##### *Mas antes*, vá até o seu repositório de exercícios da trybe e, na respectiva seção, crie uma pasta para o dia de hoje. Dentro dela, você irá rodar o seguinte comando:
 
@@ -196,7 +204,7 @@ function App() {
         <input
           type="text"
           name="name"
-          placeholder="Name"
+          placeholder="Nome"
           value={formData.name}
           onChange={handleChange}
         />
@@ -216,14 +224,14 @@ function App() {
         <input
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="Senha"
           value={formData.password}
           onChange={handleChange}
         />
 
       </div>
-      <button type="submit">
-        Submit
+      <button>
+       Enviar
       </button>
      <h1>nome: { formData.name }</h1>
      <h1>email: { formData.email }</h1>
@@ -234,22 +242,24 @@ function App() {
 export default App;
 ```
 
-### Esse é o mais que simples, mais que praticado, `handleChange` de um formulário. Estamos criando um hook com o `useState` e criando chaves para armazenar os dados que o usuário irá digitar nos *inputs*. Depois, criamos a nossa função `handleChange`, que vai ser utilizada no escutador de eventos `onChange`.
+#### Esse é o mais que simples, mais que praticado, `handleChange` de um formulário.
+- #### Estamos criando um hook com o `useState` e criando chaves para armazenar os dados que o usuário irá digitar nos *inputs*.
+- #### Depois, criamos a nossa função `handleChange`, que vai ser utilizada no *escutador de eventos* `onChange`.
 
-#### *Perceba que, no caso de componentes funcionais, é necessário fazer um "spread" do objeto antes de mudar as suas chaves dinamicamente, caso contrário, a sua função vai sobrescrever o que já foi armazenado*. 
+##### *Perceba que, no caso de componentes funcionais, é necessário fazer um "spread" do objeto antes de mudar as suas chaves dinamicamente, caso contrário, a sua função vai sobrescrever o que já foi armazenado*. 
 
-#### Da maneira feita acima, a lógica só pode ser utilizada uma única vez. Será que podemos pensar em fazer, dessa lógica, algo mais dinâmico?
+#### Da maneira feita acima, a lógica só pode ser utilizada uma única vez. Será que podemos pensar melhorar isso com um hook customizado?
 
 
 ![](https://media.giphy.com/media/nlSrYLgtOC0b2qxPfn/giphy.gif)
-##### *Olha a dica!! Antes de avançar no conteúdo, tente pensar  em como implementar essa refatoração por conta própria ;)*
+##### `Olha a dica!! Antes de avançar no conteúdo, tente pensar  em como implementar essa refatoração por conta própria ;)`
 
 
 
 
 #### Vamos ver o mesmo código, mas utilizando uma Hook Customizada:
-- Na pasta src, crie um diretório chamado `hooks`
-- Dentro dele, crie um arquivo chamado `useFormValidation` e cole o seguinte código dentro dele:
+- Na pasta src, crie outra pasta chamada `hooks`
+- Dentro dela, crie um arquivo chamado `useFormValidation.js` e cole o seguinte código:
 
 ```JS
 import { useState } from 'react';
@@ -257,10 +267,10 @@ import { useState } from 'react';
 export default function useFormValidation(initialState) {
   const [values, setValues] = useState(initialState);
 
-  const handleChange = (event) => {
+  const handleChange = (e) => {
     setValues({
       ...values,
-      [event.target.name]: event.target.value
+      [event.target.name]: e.target.value
     });
   };
 
@@ -272,6 +282,7 @@ export default function useFormValidation(initialState) {
 ```
 
 #### Está criado o seu Custom Hook! Agora só falta refatorar o componente:
+`antes de continuar, entenda plenamente o que foi feito acima`
 
 ```JS
 import React from 'react';
@@ -317,10 +328,15 @@ export default function LoginForm() {
 }
 ```
 
+- #### Reparou que o estado inicial também pode ser dinâmico? Dessa forma, estamos basicamente criando um `handleChange` que pode ser usado em qualquer outra situação de formulário.
+- #### Só precisamos fazer duas coisas:
+-  *Desestruturar os valores que estão sendo retornados pelo hook customizado, para utilizá-los em nosso componente*;
+- *Enviar, ao nosso custom hook, o estado inicial com o qual queremos trabalhar.*
+
 
 ![](https://media.giphy.com/media/yJFeycRK2DB4c/giphy.gif)
 
-#### Vamos exercitar um pouquinho mais? Bora para os exercícios de fixação!
+##### Vamos exercitar um pouquinho mais? Vamo aos exercícios de fixação!
 
 
 
@@ -386,7 +402,7 @@ export function App() {
 
 #### Pense em como criar um Hook Customizado para esse caso - o de um contador. Ah, e faça com que o contador do *code review* começe a partir do número 10.
 
-## Atenção! Para esse exercício no *React Playground*, não crie diretórios, crie apenas os arquivos necessários direto na pasta src.
+## Atenção! Para esse exercício no `React Playground`, não crie pastas, crie apenas os arquivos dos seus hooks customizados direto na pasta src.
 - sem estresse, viu? Qualquer coisa é só dar uma olhada *gabarito* :)) 
 
 
@@ -400,7 +416,7 @@ export function App() {
 
 ![](https://media.giphy.com/media/6wmz6Qo40eTDf4tW3Z/giphy.gif)
 
-### Vamos para a aula ao vivo reforçar mais ainda os conceitos por trás sobre dessas belezinhas, os Custom Hooks.
+### Vamos para a aula ao vivo reforçar mais ainda os conceitos por trás sobre dessas belezinhas, os Custom Hooks. :smile:
 
 
 
@@ -437,7 +453,7 @@ const themes = {
 
 function App() {
   return (
-  <button>Toggle Theme</button>
+  <button>Mudar tema</button>
   );
 }
 
@@ -466,17 +482,18 @@ export default App;
 
 #### Se você está com tempo, que tal tentar mais uma coisinha? Volte no primeiro código que vimos na aula, aquele da requisição à API  de memes, e tente adicionar um botão que salva a `url` dos memes que o usuário curtir:
 
-- Crie um arquivo na pasta `hooks` chamado `useLocalStorage` e escreva a estrutura básica da sua função;
-- Crie a lógica que vai verificar se já existe algo em uma chave específica e, se não existir, crie um valor padrão para iniciar essa chave no localStorage (tudo isso deve ser dinâmico);
-- Armazene o valor em uma variável;
-- Use essa variável dentro de um `useEffect` para iniciar a aplicação com o valor que está dentro do `localStorage`
-- Retorne a variável que está armazenando o valor, bem como a função que o altera
+- Crie um arquivo na pasta `hooks` chamado `useLocalStorage.js` e escreva a estrutura básica da sua função;
+- `Dinamicamente`, crie a lógica que vai verificar se já existe algum valor em uma chave específica do `localStorage`. Se não existir, inicie essa chave com um array vazio;
+- Armazene este valor em um hook, utilizando o `useState`;
+- Use esse hook dentro de um `useEffect` para iniciar o `localStorage` com o valor desta constante à renderização do componente;
+- Retorne, em um array, a variável que está armazenando o valor, bem como a função que o altera.
+
 ##### No componente:
 - Importe o seu hook customizado;
-- Desestruture o que foi retornado dele e crie uma chave para o localStorage, bem como um valor inicial;
+- Desestruture o que foi retornado dele e envie para ele a chave para o localStorage, bem como um valor inicial;
 - Crie uma função que ira incrementar os valores salvos no localStorage;
 - Crie um botão com o texto `Curtir`;
-- Adicione essa função no escutador de eventos `onClick` do botão, passando a url como parâmetro;
+- Adicione essa função no escutador de eventos `onClick` do botão, passando a `url`  da imagem como parâmetro;
 *Dica: a função precisa ser executada com uma callBack*
 
 #### A resolução está no *gabarito*.
