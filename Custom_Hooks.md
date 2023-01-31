@@ -9,15 +9,15 @@
 ### Os `Custom Hooks`, ou `Hooks Customizados`, vieram para trazer ainda mais dinamismo para suas aplicações, diminuindo a redundância e a complexidade em seus códigos. Bora lá conhecer esse novo amigo fiel.
 
 #### O que vamos aprender?
-- ##### O que são Hooks Customizados, entender porquê eles são tão bons para o desenvolvedor front-end e, finalmente, criar nossos próprios Hooks Customizados!
+- ##### O que são Custom Hooks, entender porquê eles são tão bons para o desenvolvedor front-end e, finalmente, criar nossos próprios Custom Hooks!
 
 #### Você será capaz de:
 - ##### Identificar redundância e complexidade no seu código com mais eficiência;
 - ##### Criar Custom Hooks para diferentes ocasiões.
 
 #### Por que isso é importante?
-- ##### Uma das coisas essenciais para ser um bom profissional de desenvolvimento web é a capacidade de fazer do seu código o mais dinâmico, mais limpo e reutilizável possível. Os Hooks Customizados nos ajudam nessa ~~obrigação~~ tarefa.
-- ##### Além disso, o uso de Hooks Customizados fortalece o senso de comunidade que devemos ter em nossas trajetórias no desenvolvimento web. Isso, porque há muitos Hooks Customizados já criados por outras pessoas e que você pode utilizar, assim como você poderá criar mais outros e disponibilizá-los para seus pares!
+- ##### Uma das coisas essenciais para ser um bom profissional de desenvolvimento web é a capacidade de fazer do seu código o mais dinâmico, mais limpo e reutilizável possível. Os Custom Hooks nos ajudam nessa ~~obrigação~~ tarefa.
+- ##### Além disso, o uso de Custom Hooks fortalece o senso de comunidade que devemos ter em nossas trajetórias no desenvolvimento web. Isso, porque há muitos Hooks Customizados já criados por outras pessoas e que você pode utilizar, assim como você poderá criar mais outros e disponibilizá-los para seus pares!
 
 ### Vamos juntes nessa viagem!!
 
@@ -34,7 +34,7 @@
 
 #### Nas seções anteriores, você já aprendeu sobre as vantagens de se criar componentes genéricos e reutilizáveis em suas aplicações. Como, por exemplo, um componente de botão que você pode utilizar em mais de uma rota, apenas adaptando seus atributos para o contexto desejado.
 
-#### Pois bem, um  Hook Customizado carrega exatamente esse benefício. É uma função genérica que utiliza `hooks nativos` para criar um`bloco de código` que exerce uma `lógica específica`, e pode ser utilizada em mais de um lugar da sua aplicação. Isso é vantajoso em diversos aspectos - você deixará seus componentes mais limpos e legíveis, diminuirá a complexidade do código e, principalmente, economizará tempo e energia para os problemas mais difíceis.
+#### Pois bem, um Custom Hook carrega exatamente esse benefício. É uma função genérica que utiliza `hooks nativos` para criar um `bloco de código` que exerce uma `lógica específica`, e pode ser utilizada em mais de um lugar da sua aplicação. Isso é vantajoso em diversos aspectos - você deixará seus componentes mais limpos e legíveis, diminuirá a complexidade do código e, principalmente, economizará tempo e energia para os problemas mais difíceis.
 
 #### Vamos pensar em uma situação prática: suponhamos que você está trabalhando com mais de uma rota e, em cada uma delas, você precise fazer uma requisição para uma API diferente. Como nós faríamos isso da maneira que já aprendemos?
 
@@ -78,7 +78,7 @@ export default App;
 
 #### Essa maneira já é bem menos complexa do que com o uso dos estados em componentes de classe, mas dá para ficar muito melhor. No exemplo acima, toda a nossa lógica está na raiz da função do componente e não poderá ser reutilizada em outro lugar, além de prejudicar a limpeza das funções principais. Esse componente pode ficar limpinho, limpinho.
 
-#### Com o uso de Hooks Customizados, nós podemos deixar a lógica reutilizável e movê-la para outro lugar. Podemos, por exemplo, criar uma pasta chamada `hooks` e, dentro dela, um arquivo chamado `useFetch.js`. O código ficaria assim:
+#### Com o uso de Custom Hooks, nós podemos deixar a lógica reutilizável e movê-la para outro lugar. Podemos, por exemplo, criar uma pasta chamada `hooks` e, dentro dela, um arquivo chamado `useFetch.js`. O código ficaria assim:
 
 ```JS
 import { useState, useEffect } from 'react';
@@ -135,7 +135,7 @@ export default App;
 
 #### No componente, estamos desestruturando a variável que vai armazenar o retorno da API, bem como a variável que vai "setar" o loading de `true` para `false`;
 
-#### Estamos enviando a `url` da API para o parâmetro do hook customizado para que ele faça o seu trabalho corretamente;
+#### Estamos enviando a `url` da API para o parâmetro do Hook Customizado para que ele faça o seu trabalho corretamente;
 
 #### Agora, é só pegar as variáveis `data` e `loading` e utilizá-las na renderização.
 
@@ -334,7 +334,7 @@ export default function LoginForm() {
 
 #### Só precisamos fazer duas coisas:
 -  *Desestruturar os valores que estão sendo retornados pelo hook customizado, para utilizá-los em nosso componente*;
-- *Enviar, ao nosso custom hook, o estado inicial com o qual queremos trabalhar.*
+- *Enviar, ao nosso Hook Customizado, o estado inicial com o qual queremos trabalhar.*
 
 
 ![](https://media.giphy.com/media/yJFeycRK2DB4c/giphy.gif)
@@ -405,7 +405,7 @@ export function App() {
 
 #### Pense em como criar um Hook Customizado para esse caso - o de um contador. Ah, e faça com que o contador do `code review `comece a partir do número 10.
 
-## Atenção! Para esse exercício, no `React Playground`, não crie pastas, crie apenas o arquivo do seu hook customizados direto na pasta src.
+## Atenção! Para esse exercício, no `React Playground`, não crie pastas, crie apenas o arquivo do seu Custom Hook direto na pasta src.
 - sem estresse, viu? Qualquer coisa é só dar uma olhada *gabarito* :heart_eyes:
 
 
@@ -432,7 +432,7 @@ export function App() {
 
 ### Para este exercício, vamos implementar um *ToggleTheme*. Nesse caso, é apenas um botão que muda de cor ao evento de clique.
 
-### Na mesma aplicação React que você criou mais cedo, a *custom-hooks*, você terá que implementar a lógica *sem* Custom Hooks e, após isso, refatorar o código para usar a lógica *com* Custom Hook.
+### Na mesma aplicação React que você criou mais cedo, a *custom-hooks*, você terá que implementar a lógica *sem* Custom Hook e, após isso, refatorar o código para usar a lógica *com* Custom Hook.
 
 # Instruções
 
