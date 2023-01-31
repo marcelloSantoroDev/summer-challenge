@@ -515,6 +515,6 @@ export default App;
 
 
 
-- Sobre Custom Hooks no site do React: [](**[https://reactjs.org/docs/hooks-custom.html](https://reactjs.org/docs/hooks-custom.html)**)
--  React Hooks: Organize sua Aplicação com Hooks Personalizados (Youtube): [](**[https://www.youtube.com/watch?v=QjHX9qOngGA](https://www.youtube.com/watch?v=QjHX9qOngGA)**)
-- React Custom Hook tutorial with example [](**[https://www.bezkoder.com/react-custom-hook/](https://www.bezkoder.com/react-custom-hook/)**)
+ [Sobre hooks customizados no site do React](**[https://reactjs.org/docs/hooks-custom.html](https://reactjs.org/docs/hooks-custom.html)**)
+ [React Hooks: Organize sua Aplicação com Hooks Personalizados (Youtube)](**[https://www.youtube.com/watch?v=QjHX9qOngGA](https://www.youtube.com/watch?v=QjHX9qOngGA)**)
+ [React Custom Hook tutorial with example](**[https://www.bezkoder.com/react-custom-hook/](https://www.bezkoder.com/react-custom-hook/)**)
